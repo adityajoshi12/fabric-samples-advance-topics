@@ -5,8 +5,8 @@
 # Vim file artifacts
 .*.sw*
 # installed platform-specific binaries
-/bin
-/config
+# /bin
+# /config
 .DS_Store
 .project
 # omit Go vendor directories
