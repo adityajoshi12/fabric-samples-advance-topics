@@ -3,13 +3,12 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-version: '2'
+version: "2"
 
 networks:
   test:
 
 services:
-
   ca_org1:
     image: hyperledger/fabric-ca:$IMAGE_TAG
     environment:
