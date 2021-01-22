@@ -23,7 +23,7 @@ const channelName = "mychannel";
 const chaincodeName = "basic";
 const mspOrg1 = "Org1MSP";
 const walletPath = path.join(__dirname, "wallet");
-const org1UserId = "appUser1";
+const org1UserId = "appUser";
 
 function prettyJSONString(inputString) {
   return JSON.stringify(JSON.parse(inputString), null, 2);
@@ -153,7 +153,7 @@ async function main() {
       );
       result = await contract.submitTransaction(
         "CreateAsset",
-        "asset14",
+        "Date.now().toString()",
         "yellow",
         "5",
         "Tom",
@@ -167,6 +167,8 @@ async function main() {
       // Having the chaincode return a value after after doing a create or update could avoid the application
       // from making an "evaluateTransaction" call to get information on the asset added by the chaincode
       // during the create or update.
+      console.log("===========================================");
+      console.log(result.toString());
       console.log(
         `*** Result committed: ${prettyJSONString(result.toString())}`
       );

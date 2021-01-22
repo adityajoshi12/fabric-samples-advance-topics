@@ -7,7 +7,7 @@
 			"id": "exploreradmin",
 			"password": "exploreradminpw"
 		},
-		"enableAuthentication": true,
+		"enableAuthentication": false,
 		"organization": "Org1MSP",
 		"connection": {
 			"timeout": {
