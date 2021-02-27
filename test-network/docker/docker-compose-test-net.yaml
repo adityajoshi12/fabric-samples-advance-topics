@@ -18,6 +18,8 @@ services:
     container_name: orderer.example.com
     image: hyperledger/fabric-orderer:$IMAGE_TAG
     environment:
+      - ORDERER_OPERATIONS_LISTENADDRESS=orderer.example.com:9443
+      - ORDERER_METRICS_PROVIDER=prometheus
       - FABRIC_LOGGING_SPEC=INFO
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_LISTENPORT=7050
@@ -44,6 +46,7 @@ services:
       - orderer.example.com:/var/hyperledger/production/orderer
     ports:
       - 7050:7050
+      - 9443:9443
     networks:
       - test
 
@@ -51,11 +54,9 @@ services:
     container_name: peer0.org1.example.com
     image: hyperledger/fabric-peer:$IMAGE_TAG
     environment:
-      #Generic peer variables
+      - CORE_OPERATIONS_LISTENADDRESS=peer0.org1.example.com:9444
+      - CORE_METRICS_PROVIDER=prometheus
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-      # the following setting starts chaincode containers on the same
-      # bridge network as the peers
-      # https://docs.docker.com/compose/networking/
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=${COMPOSE_PROJECT_NAME}_test
       - FABRIC_LOGGING_SPEC=INFO
       #- FABRIC_LOGGING_SPEC=DEBUG
@@ -82,6 +83,7 @@ services:
     command: peer node start
     ports:
       - 7051:7051
+      - 9444:9444
     networks:
       - test
 
@@ -89,7 +91,8 @@ services:
     container_name: peer0.org2.example.com
     image: hyperledger/fabric-peer:$IMAGE_TAG
     environment:
-      #Generic peer variables
+      - CORE_OPERATIONS_LISTENADDRESS=peer0.org2.example.com:9445
+      - CORE_METRICS_PROVIDER=prometheus
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       # the following setting starts chaincode containers on the same
       # bridge network as the peers
@@ -120,5 +123,6 @@ services:
     command: peer node start
     ports:
       - 9051:9051
+      - 9445:9445
     networks:
       - test

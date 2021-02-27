@@ -1,0 +1,53 @@
+version: "3"
+
+networks:
+  test:
+
+services:
+  fluentd:
+    container_name: fluentd
+    build:
+      context: .
+    user: root
+    image: fluentd
+    volumes:
+      - /var/lib/docker/containers:/fluentd/log/containers # Example: Reading docker logs
+      - ./:/fluentd/etc/
+      - ./logs:/output/ # Example: Fluentd will collect logs and store it here for demo
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+    networks:
+      - test
+
+  elasticsearch: # port 9200
+    image: elasticsearch:7.9.1
+    container_name: elasticsearch
+    environment:
+      - node.name=elasticsearch
+      - http.cors.enabled=true
+      - http.cors.allow-origin="*"
+      - cluster.initial_master_nodes=elasticsearch
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - 9200:9200
+      - 9300:9300
+    networks:
+      - test
+  kibana:
+    image: kibana:7.9.1
+    container_name: kibana
+    depends_on:
+      - elasticsearch
+    ports:
+      - "5601:5601"
+    networks:
+      - test
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
