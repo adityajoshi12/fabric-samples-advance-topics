@@ -1,0 +1,39 @@
+caliper:
+  benchconfig: ./benchmarks/assetCCBenchmark.yaml
+  networkconfig: ./networks/networkConfig.yaml
+  bind:
+    sut: fabric:2.2
+  report:
+    path: ./report.html
+  logging:
+    template: "%timestamp%%level%%module%%message%%metadata%"
+    formats:
+      timestamp: "YYYY.MM.DD-HH:mm:ss.SSS ZZ"
+      label: false
+      json: false
+      pad: true
+      align: false
+      attributeformat:
+        level: " %attribute%"
+        module: " [%attribute%] "
+        metadata: " (%attribute%)"
+      colorize:
+        all: true
+        colors:
+          info: green
+          error: red
+          warn: yellow
+          debug: grey
+    targets:
+      console:
+        target: console
+        enabled: true
+        options:
+          level: debug
+      file:
+        target: file
+        enabled: false
+  worker:
+    remote: false
+    communication:
+      method: process

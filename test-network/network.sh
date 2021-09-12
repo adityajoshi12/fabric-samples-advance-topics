@@ -135,7 +135,7 @@ function createOrgs() {
   if [ -d "organizations/peerOrganizations" ]; then
     rm -Rf organizations/peerOrganizations && rm -Rf organizations/ordererOrganizations
   fi
-echo "CRYPTO IS:========>"$CRYPTO
+  echo "CRYPTO IS:========>"$CRYPTO
   # Create crypto material using cryptogen
   if [ "$CRYPTO" == "cryptogen" ]; then
     which cryptogen
