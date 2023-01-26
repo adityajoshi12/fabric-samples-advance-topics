@@ -3,7 +3,7 @@ const FabricCAServices = require("fabric-ca-client");
 const path = require("path");
 let fs = require("fs");
 const { BlockDecoder } = require("fabric-common");
-// const helpers = require("./app/helper");
+const channelName= "mycc"
 let username = "appUser";
 
 const getCCP = async (org) => {
@@ -52,18 +52,18 @@ async function queryBlock() {
       discovery: { enabled: true, asLocalhost: true },
     });
 
-    const network = await gateway.getNetwork("mychannel");
+    const network = await gateway.getNetwork(channelName);
 
     // Get the contract from the network.
     const contract = network.getContract("qscc");
-    // console.log(contract);
+
     let result = await contract.evaluateTransaction(
       "GetBlockByNumber",
-      "mychannel",
-      "5"
+      channelName,
+      "1"
     );
     result = BlockDecoder.decode(result);
-    console.log(result);
+    console.log(result.data.data[0].payload);
   } catch (ex) {
     console.error(ex);
   }

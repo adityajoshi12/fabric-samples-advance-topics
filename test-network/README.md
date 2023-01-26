@@ -10,3 +10,11 @@ This repository contains the advance fabric topics with the link to the details 
 - [Getting Started - Hyperledger Fabric 2.2 Tutorial](https://adityaajoshi.medium.com/hyperledger-fabric-2-2-tutorial-eb21618d5fa)
 
 You can checkout my [course on Hyperledger Fabric Deployment on MultiHost on Udemy](https://bit.ly/hlf-multihost-deployment)
+
+```
+./network.sh up createChannel  -ca -s couchdb -c mycc
+```
+
+```
+./network.sh deployCC -ccn mycc1 -c mycc -ccp ../asset-transfer-basic/chaincode-go/ -ccl go
+```
