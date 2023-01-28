@@ -33,6 +33,15 @@ This repository contains the advance fabric topics with the link to the details 
 Hyperledger Fabric Video Tutorial
 
 </div>
-<!-- YOUTUBE:START -->
+<!-- YOUTUBE:START --><table><tr><td><a href="https://www.youtube.com/watch?v=wr2eqcuzrAU"><img width="140px" src="https://i.ytimg.com/vi/wr2eqcuzrAU/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=wr2eqcuzrAU">Adding New Orderer in Running Hyperledger Fabric | Channel Participation API | ADITYA JOSHI |</a><br/>Jan 4, 2022</td></tr></table>
+<table><tr><td><a href="https://www.youtube.com/watch?v=C0unM4XuIoM"><img width="140px" src="https://i.ytimg.com/vi/C0unM4XuIoM/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=C0unM4XuIoM">Adding a new Organization to Existing Hyperledger Fabric Network  | ADITYA JOSHI |</a><br/>Nov 23, 2021</td></tr></table>
+<table><tr><td><a href="https://www.youtube.com/watch?v=xLwfqc3rkrI"><img width="140px" src="https://i.ytimg.com/vi/xLwfqc3rkrI/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=xLwfqc3rkrI">Introduction to PKI | Public Key Infrastructure  | ADITYA JOSHI |</a><br/>Nov 19, 2021</td></tr></table>
+<table><tr><td><a href="https://www.youtube.com/watch?v=p7DdCqisNVA"><img width="140px" src="https://i.ytimg.com/vi/p7DdCqisNVA/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=p7DdCqisNVA">Certificate Revocation in Hyperledger Fabric using Fabric CA | ADITYA JOSHI |</a><br/>Nov 16, 2021</td></tr></table>
+<table><tr><td><a href="https://www.youtube.com/watch?v=cjXJrlP2owc"><img width="140px" src="https://i.ytimg.com/vi/cjXJrlP2owc/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=cjXJrlP2owc">Adding a new peer to existing organization in Hyperledger Fabric | ADITYA JOSHI |</a><br/>Nov 12, 2021</td></tr></table>
 <!-- YOUTUBE:END -->
 
