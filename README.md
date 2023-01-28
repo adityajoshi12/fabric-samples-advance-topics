@@ -43,5 +43,15 @@ Hyperledger Fabric Video Tutorial
 <td><a href="https://www.youtube.com/watch?v=p7DdCqisNVA">Certificate Revocation in Hyperledger Fabric using Fabric CA | ADITYA JOSHI |</a><br/>Nov 16, 2021</td></tr></table>
 <table><tr><td><a href="https://www.youtube.com/watch?v=cjXJrlP2owc"><img width="140px" src="https://i.ytimg.com/vi/cjXJrlP2owc/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=cjXJrlP2owc">Adding a new peer to existing organization in Hyperledger Fabric | ADITYA JOSHI |</a><br/>Nov 12, 2021</td></tr></table>
+<table><tr><td><a href="https://www.youtube.com/watch?v=wozZUYg4RF8"><img width="140px" src="https://i.ytimg.com/vi/wozZUYg4RF8/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=wozZUYg4RF8">Peer Expired Certificates Renewal using Fabric CA | Hyperledger Fabric | Aditya Joshi</a><br/>Nov 5, 2021</td></tr></table>
+<table><tr><td><a href="https://www.youtube.com/watch?v=yfk1ynliFwE"><img width="140px" src="https://i.ytimg.com/vi/yfk1ynliFwE/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=yfk1ynliFwE">Hyperledger Fabric - Peer certificate renewal  | ADITYA JOSHI |</a><br/>Nov 2, 2021</td></tr></table>
+<table><tr><td><a href="https://www.youtube.com/watch?v=EHsF8_5YHJs"><img width="140px" src="https://i.ytimg.com/vi/EHsF8_5YHJs/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=EHsF8_5YHJs">Hyperledger Fabric CA with Postgres | Configure the Fabric CA server to connect to PostgreSQL.</a><br/>Oct 26, 2021</td></tr></table>
+<table><tr><td><a href="https://www.youtube.com/watch?v=QzVDBJJYc6I"><img width="140px" src="https://i.ytimg.com/vi/QzVDBJJYc6I/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=QzVDBJJYc6I">Hyperledger Fabric - Peers Explained</a><br/>Oct 25, 2021</td></tr></table>
+<table><tr><td><a href="https://www.youtube.com/watch?v=JCyZYoJrb-8"><img width="140px" src="https://i.ytimg.com/vi/JCyZYoJrb-8/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=JCyZYoJrb-8">How to integrate Hyperledger Explorer with Hyperledger Fabric?</a><br/>Dec 29, 2020</td></tr></table>
 <!-- YOUTUBE:END -->
 
