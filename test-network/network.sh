@@ -109,6 +109,19 @@ function checkPrereqs() {
       warnln "Local fabric-ca binaries and docker images are out of sync. This may cause problems."
     fi
   fi
+
+  ## Check for cfssl
+  if [ "$CRYPTO" == "cfssl" ]; then
+  
+    cfssl version > /dev/null 2>&1
+    if [[ $? -ne 0 ]]; then
+      errorln "cfssl binary not found.."
+      errorln
+      errorln "Follow the instructions to install the cfssl and cfssljson Binaries:"
+      errorln "https://github.com/cloudflare/cfssl#installation"
+      exit 1
+    fi
+  fi
 }
 
 # Before you can bring up a network, each organization needs to generate the crypto
@@ -181,6 +194,24 @@ function createOrgs() {
 
   fi
 
+  if [ "$CRYPTO" == "cfssl" ]; then
+
+    . organizations/cfssl/registerEnroll.sh
+              # cert-type   CN       org
+    peer_cert peer peer0.org1.example.com org1
+    peer_cert admin Admin@org1.example.com org1
+
+    infoln "Creating Org2 Identities"
+
+    peer_cert peer peer0.org2.example.com org2
+    peer_cert admin Admin@org2.example.com org2
+
+    infoln "Creating Orderer Org Identities"
+                 # cert-type   CN   
+    orderer_cert orderer orderer.example.com
+    orderer_cert admin Admin@example.com
+
+  fi 
   # Create crypto material using Fabric CA
   if [ "$CRYPTO" == "Certificate Authorities" ]; then
     infoln "Generating certificates using Fabric CA"
@@ -492,6 +523,9 @@ while [[ $# -ge 1 ]] ; do
     ;;
   -verbose )
     VERBOSE=true
+    ;;
+  -cfssl )
+    CRYPTO="cfssl"
     ;;
   * )
     errorln "Unknown flag: $key"
