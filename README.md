@@ -14,7 +14,7 @@ This repository contains the advance fabric topics with the link to the details 
 - [Renew peers and orderer certificates](./cert-renewal/)
 
 ## Roadmap
-[Roadmap for Hyperledger Fabric](https://hungry-scallop-e75.notion.site/Hyperledger-Fabric-Roadmap-bcad6f640dc7456a9cd9f32e086e621f)
+[Roadmap for Hyperledger Fabric](https://adityaajoshi12.gumroad.com/l/roadmap-hyperledger-fabric) - Use Coupon **LAUNCH-OFFER** and get it for free.
 
 ## Courses
 <br>
