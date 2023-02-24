@@ -132,6 +132,7 @@ function printHelp() {
     println
     println " Examples:"
     println "   network.sh up createChannel -ca -c mychannel -s couchdb"
+    println "   network.sh up createChannel -cfssl -s couchdb -c mychannel"
     println "   network.sh createChannel -c channelName"
     println "   network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript/ -ccl javascript"
     println "   network.sh deployCC -ccn mychaincode -ccp ./user/mychaincode -ccv 1 -ccl javascript"
