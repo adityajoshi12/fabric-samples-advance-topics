@@ -18,7 +18,18 @@
 # this script is actually in and infer location from there. (putting first)
 
 ROOTDIR=$(cd "$(dirname "$0")" && pwd)
-export PATH=/Users/a0j0buc/development/fabric-samples/bin:$PATH
+case $(uname | tr '[:upper:]' '[:lower:]') in
+  linux*)
+   export PATH=${PWD}/../bin/linux:$PATH
+    ;;
+  darwin*)
+   export PATH=${PWD}/../bin/osx:$PATH
+    ;;
+  *)
+    export PATH=../bin:$PATH
+    ;;
+esac
+
 export FABRIC_CFG_PATH=${PWD}/configtx
 export VERBOSE=false
 
