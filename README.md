@@ -2,7 +2,10 @@
 
 This repository contains the advance fabric topics with the link to the details explanation. If you find this repository **, Please Star and Fork this repository** it really gives me motivation to make such content and you can also follow me on [medium](https://adityaajoshi.medium.com/) for such content.
 
-# Content
+## Roadmap
+[Roadmap for Hyperledger Fabric](https://adityaajoshi12.gumroad.com/l/roadmap-hyperledger-fabric) - Use Coupon **LAUNCH-OFFER** and get it for free.
+
+## Content
 - [Hyperledger Fabric Blockchain Performance Benchmark Using Hyperleger Capiler](https://adityaajoshi.medium.com/hyperledger-fabric-blockchain-performance-benchmark-using-hyperleger-capiler-66d9a9af5cce)
 - [Hyperledger Fabric v2.X Monitoring Using Prometheus](https://medium.com/coinmonks/hyperledger-fabric-v2-x-monitoring-using-prometheus-974e433073f5)
 - [Modifying the Batch Size in Hyperledger Fabric v2.2](https://medium.com/coinmonks/modifying-the-batch-size-in-hyperledger-fabric-v2-2-3ec2dd779e2b)
@@ -13,4 +16,43 @@ This repository contains the advance fabric topics with the link to the details 
 - [Renew peers and orderer certificates](./cert-renewal/)
 
 
-You can checkout my [course on Hyperledger Fabric Deployment on MultiHost on Udemy](https://bit.ly/hlf-multihost-deployment)
+
+## Courses
+<br>
+
+- <img src="https://img-c.udemycdn.com/course/240x135/3741540_d31f_4.jpg" width="100px"/> [Learn to Deploy Hyperledger Fabric v2.2 on Multihost](https://udemy.com/course/learn-to-deploy-hyperledger-fabric-v22-on-multihost/)
+
+- <img src="https://img-c.udemycdn.com/course/240x135/3970920_6f16_4.jpg" width="100px"/> [The Complete Guide on Hyperledger Fabric v2.x on Kubernetes](https://www.udemy.com/course/hyperledger-fabric-on-kubernetes-complete-guide)
+
+- <img src="https://img-c.udemycdn.com/course/240x135/3815532_1edc_2.jpg" width="100px"/> [Master Class On Hyperledger Besu](https://udemy.com/course/hyperledger-besu-master-class)
+
+- <img src="https://img-c.udemycdn.com/course/240x135/3814476_e3c7.jpg" width="100px"/> [Certified Blockchain Developer Certification - 2022](https://www.udemy.com/course/certified-blockchain-developer-certification)
+
+
+## Install cfssl
+Linux
+```
+VERSION=$(curl --silent "https://api.github.com/repos/cloudflare/cfssl/releases/latest" | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')
+VNUMBER=${VERSION#"v"}
+wget https://github.com/cloudflare/cfssl/releases/download/${VERSION}/cfssl_${VNUMBER}_linux_amd64 -O cfssl
+chmod +x cfssl
+sudo mv cfssl /usr/local/bin
+VERSION=$(curl --silent "https://api.github.com/repos/cloudflare/cfssl/releases/latest" | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')
+VNUMBER=${VERSION#"v"}
+wget https://github.com/cloudflare/cfssl/releases/download/${VERSION}/cfssljson_${VNUMBER}_linux_amd64 -O cfssljson
+chmod +x cfssljson
+sudo mv cfssljson /usr/local/bin
+```
+MacOS
+```
+VERSION=$(curl --silent "https://api.github.com/repos/cloudflare/cfssl/releases/latest" | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')
+VNUMBER=${VERSION#"v"}
+wget https://github.com/cloudflare/cfssl/releases/download/${VERSION}/cfssl_${VNUMBER}_darwin_amd64 -O cfssl
+chmod +x cfssl
+sudo mv cfssl /usr/local/bin
+VERSION=$(curl --silent "https://api.github.com/repos/cloudflare/cfssl/releases/latest" | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')
+VNUMBER=${VERSION#"v"}
+wget https://github.com/cloudflare/cfssl/releases/download/${VERSION}/cfssljson_${VNUMBER}_darwin_amd64 -O cfssljson
+chmod +x cfssljson
+sudo mv cfssljson /usr/local/bin
+```
