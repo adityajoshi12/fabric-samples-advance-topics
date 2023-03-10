@@ -50,9 +50,33 @@ VNUMBER=${VERSION#"v"}
 wget https://github.com/cloudflare/cfssl/releases/download/${VERSION}/cfssl_${VNUMBER}_darwin_amd64 -O cfssl
 chmod +x cfssl
 sudo mv cfssl /usr/local/bin
+
 VERSION=$(curl --silent "https://api.github.com/repos/cloudflare/cfssl/releases/latest" | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')
 VNUMBER=${VERSION#"v"}
 wget https://github.com/cloudflare/cfssl/releases/download/${VERSION}/cfssljson_${VNUMBER}_darwin_amd64 -O cfssljson
 chmod +x cfssljson
 sudo mv cfssljson /usr/local/bin
+```
+
+## Setup CLI
+```
+export PATH=$PWD/../bin/linux:$PATH
+export FABRIC_CFG_PATH=${PWD}/../config
+source ./scripts/envVar.sh
+setGlobals 1
+```
+
+## Chaincode invoke
+```
+peer chaincode invoke -o localhost:7050 --tls true --cafile $ORDERER_CA -C testchannel -n basic --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"Args":["InitLedger"]}'
+
+
+peer chaincode query -C testchannel -n basic -c '{"Args":["GetAllAssets"]}'
+
+peer chaincode invoke -o localhost:7050 --tls true --cafile $ORDERER_CA -C testchannel -n basic --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"Args":["CreateAsset","100","Red","5","Aditya","2000"]}'
+
+
+peer chaincode invoke -o localhost:7050 --tls true --cafile $ORDERER_CA -C testchannel -n basic --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"Args":["TransferAsset","100","Nithin"]}'
+
+peer chaincode query -C testchannel -n basic -c '{"Args":["GetAllAssets"]}'
 ```
