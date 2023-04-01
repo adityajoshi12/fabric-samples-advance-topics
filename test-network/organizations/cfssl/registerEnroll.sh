@@ -176,7 +176,7 @@ function generate_peer_certs() {
     cfssl gencert \
         -ca="$CERT_DIR/ca/ca.pem" \
         -ca-key="$CERT_DIR/ca/ca-key.pem" \
-        -config="$PWD/organizations/cfssl/cert-signing-config.jso"n \
+        -config="$PWD/organizations/cfssl/cert-signing-config.json" \
         -cn="$USER" \
         -hostname="$USER,localhost,127.0.0.1" \
         -profile="sign" \
