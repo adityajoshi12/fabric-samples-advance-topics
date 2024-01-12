@@ -26,7 +26,9 @@ This repository contains the advance fabric topics with the link to the details 
 
 - <img src="https://img-c.udemycdn.com/course/240x135/3815532_1edc_2.jpg" width="100px"/> [Master Class On Hyperledger Besu](https://udemy.com/course/hyperledger-besu-master-class)
 
-- <img src="https://img-c.udemycdn.com/course/240x135/3814476_e3c7.jpg" width="100px"/> [Certified Blockchain Developer Certification - 2022](https://www.udemy.com/course/certified-blockchain-developer-certification)
+- <img src="https://img-c.udemycdn.com/course/240x135/3814476_e3c7.jpg" width="100px"/> [Certified Blockchain Developer Certification - 2023](https://www.udemy.com/course/certified-blockchain-developer-certification)
+  
+- <img src="https://d502jbuhuh9wk.cloudfront.net/courses/6582a990e4b0f762acd78a07/6582a990e4b0f762acd78a07_scaled_cover.jpg" width="100px"/> [Hyperledger Fabric Certified Pracitioner (HFCP) - 2024](https://courses.bytelearn.in/courses/Hyperledger-Fabric-Certified-Practitioner-HFCP-6582a990e4b0f762acd78a07)
 
 
 ## Install cfssl
