@@ -52,11 +52,9 @@ const hsmProviderOptions = {
 
 /**
  * Perform an HSM ID setup
- * @param {Wallet} wallet the in memory wallet to use
  * @param {CommonConnectionProfileHelper} ccp The common connection profile
  * @param {String} orgName the organization name
  * @param {String} userName the user name
- * @return {String} the identity name
  */
 async function createHSMUser(ccp, orgName, userName) {
     let wallet = await Wallets.newFileSystemWallet(`wallet/${orgName}`);
